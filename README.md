@@ -55,3 +55,7 @@ console.log(rgbToLch([128, 64, 192]))
   * `lchToHsl: (lch: [number, number, number]) => [number, number, number]`
   * `lchToHsv: (lch: [number, number, number]) => [number, number, number]`
   * `lchToLab: (lch: [number, number, number]) => [number, number, number]`
+
+## Why another color library?
+
+Existing color manipulation libraries like [`color`](https://www.npmjs.com/package/color), [`TinyColor`](http://bgrins.github.io/TinyColor/), [`Chroma.js`](https://vis4.net/chromajs/) and [`d3-color`](https://www.npmjs.com/package/d3-color) are powerful enough but are bundled with all functionalities together to support a “jQuery like” API. While sometimes we only need simple conversion among two or three color spaces. This library provides a bunch of color conversion functions which are fully treeshakable, no formatting, no manipulation, no color palette generation.
