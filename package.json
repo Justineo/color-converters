@@ -1,9 +1,10 @@
 {
   "name": "color-converters",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Modular color converters.",
   "module": "dist/index.esm.min.js",
   "main": "dist/index.cjs.min.js",
+  "types": "dist/types/index.d.ts",
   "scripts": {
     "build": "rollup -c",
     "test": "jest",
