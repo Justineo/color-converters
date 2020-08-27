@@ -56,6 +56,13 @@ console.log(rgbToLch([128, 64, 192]))
   * `lchToHsv: (lch: [number, number, number]) => [number, number, number]`
   * `lchToLab: (lch: [number, number, number]) => [number, number, number]`
 
+## Notes
+
+* Conversion between RGB and Lab/LCH follows the algorithm described in [CSS Colors Level 4](https://www.w3.org/TR/css-color-4/#rgb-to-lab), which produces slightly different result with Chroma.js. See also: [*Lab and RGB*](https://observablehq.com/@mbostock/lab-and-rgb).
+* Unavailable channel values are filled with `0` instead of `NaN` (eg. H channel in HSL when L is `0`). This is a trade-off between being more precise and requiring users to fill unavailable values themselves.
+* Produced RGB channel values are clamped to [0, 255] when converting from Lab/LCH to RGB.
+* RGB channel values are not rounded to integers.
+
 ## Why another color library?
 
 Existing color manipulation libraries like [`color`](https://www.npmjs.com/package/color), [`TinyColor`](http://bgrins.github.io/TinyColor/), [`Chroma.js`](https://vis4.net/chromajs/) and [`d3-color`](https://www.npmjs.com/package/d3-color) are powerful enough but are bundled with all functionalities together to support a “jQuery like” API. While sometimes we only need simple conversion among two or three color spaces. This library provides a bunch of color conversion functions which are fully treeshakable, no formatting, no manipulation, no color palette generation.
