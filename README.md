@@ -1,5 +1,7 @@
 # Color converters
 
+![Node.js CI](https://github.com/Justineo/color-converters/workflows/Node.js%20CI/badge.svg)
+
 Modular color converters.
 
 ## Installation
